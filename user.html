@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/35e0ac7c0a.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./user.css" />
+</head>
+
+<body>
+    <div class="container mt-5" id="content">
+        <div class="row">
+            <div class="col-sm-6">
+                <form method="get">
+                    <div>
+                        <input type="text" id="user" class="mt-4 w-75" placeholder="User name" />
+                    </div>
+                    <div><span class="text-danger w-75" id="userError"></span></div>
+                    <div>
+                        <input type="email" id="email" class="mt-4 w-75" placeholder="Email"
+                            oninput="onChangeValidation()" />
+                    </div>
+                    <div><span class="text-danger w-75" id="emailError"></span></div>
+                    <div>
+                        <input type="password" id="password" class="mt-4 w-75" placeholder="Password" />
+                    </div>
+                    <input type="hidden" id="element-id" class="mt-4 w-75" />
+                    <div><span class="text-danger w-75" id="passwordError"></span></div>
+                    <div class="mt-4" id="qualification">
+                        <b>Qualification :</b>
+                        <input title="mtech" type="checkbox" id="mtech" name="Qualification" value="mtech">mtech
+                        <input title="mca" type="checkbox" id="mca" name="Qualification" value="mca">mca
+                        <input title="btech" type="checkbox" id="btech" name="Qualification" value="btech">btech
+                        <input title="bca" type="checkbox" id="bca" name="Qualification" value="bca">bca
+                    </div>
+                    <div><span class="text-danger w-75" id="qualificationError"></span></div>
+                    <div class="mt-4">
+                        <b>Gender : </b>
+                        <input title="male" type="radio" id="male" name="Gender" value="male" />Male
+                        <input title="female" type="radio" id="female" name="Gender" value="female" />Female
+                    </div>
+                    <div><span class="text-danger w-75" id="genderError"></span></div>
+                    <div class="mt-4">
+                        <button type="submit" id="submit" class="btn btn-secondary mb-2 btn-1"
+                            onclick="handlesubmit(event)">
+                            Submit
+                        </button>
+                        <button type="reset" id="clear" class="btn btn-secondary mb-2 btn-1"
+                            onclick="clearErrorMessage(clear)">
+                            Clear
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-6">
+                <table class="col-sm-6">
+                    <tr>
+                        <th>SNo</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Qualification</th>
+                        <th>Gender</th>
+                        <th>Action</th>
+                    </tr>
+                    <tbody id="tablebody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./user.js"></script>
+</body>
+
+</html>
